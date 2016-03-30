@@ -6,20 +6,21 @@ class ContactList extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            displayedContacts: this.props.CONTACTS
+            displayedContacts: []
         }
     }
 
     handleSearch = (e) => {
+        const { CONTACTS } = this.props
         const searchQuery = e.target.value.toLowerCase()
-        const displayedContacts = this.props.CONTACTS.filter((el) => {
+        const displayedContacts = CONTACTS.filter((el) => {
             const searchValue = el.name.toLowerCase()
             return ~searchValue.indexOf(searchQuery)
         })
-
         this.setState({
             displayedContacts: displayedContacts
         })
+
     }
 
     render() {
