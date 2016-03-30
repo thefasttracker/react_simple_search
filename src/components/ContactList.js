@@ -18,7 +18,7 @@ class ContactList extends Component{
             return ~searchValue.indexOf(searchQuery)
         })
         this.setState({
-            displayedContacts: displayedContacts
+            displayedContacts
         })
 
     }
